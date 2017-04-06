@@ -152,9 +152,6 @@ var RadarChart = {
         }
 
         // levels && axises
-
-
-
         var levelFactors = d3.range(0, cfg.levels).map(function(level) {
           return radius * ((level + 1) / cfg.levels);
         });
@@ -175,7 +172,8 @@ var RadarChart = {
         levelLine.enter().append('line');
         levelLine.exit().remove();
 
-
+        //Build the level labels/axis labels
+        //Code excerpts : http://bl.ocks.org/chrisrzhou/2421ac6541b68c1680f8
          function buildLevelsLabels() {
             for (var level = 0; level < cfg.levels; level++) {
               var levelFactor = radius * ((level + 1) / cfg.levels);
@@ -202,9 +200,10 @@ var RadarChart = {
             }
             
           }
+        //Show level labels is variable showLevelsLabels is set as true
         if (cfg.showLevelsLabels) {buildLevelsLabels();}
 
-
+        //If variable levelTick is set as true, show only the ticks (no lines) for each level
         if (cfg.levelTick){
           levelLine
           .attr('class', 'level')
@@ -252,36 +251,24 @@ var RadarChart = {
           });
         }
           
-
+        //Show axis lines and labels if variables axisLine or axisText are set as true
         if(cfg.axisLine || cfg.axisText) {
           var axis = container.selectAll('.axis').data(allAxis);
-
           var newAxis = axis.enter().append('g');
-         //var xAxis = d3.svg.axis()
-            //  .scale(d3.scale.linear().domain([0, 100]).range([0, 520]))
-            //  .tickValues([25,75]);
-            //newAxis.append(xAxis);
-
           if(cfg.axisLine) {
             newAxis.append('line');
                      }
           if(cfg.axisText) {
             newAxis.append('text');
           }
-
           axis.exit().remove();
-
           axis.attr('class', 'axis');
-
           if(cfg.axisLine) {
             axis.select('line')
             .attr('x1', cfg.w/2)
             .attr('y1', cfg.h/2)
             .attr('x2', function(d, i) { return (cfg.w/2-radius2)+getHorizontalPosition(i, radius2, cfg.factor); })
             .attr('y2', function(d, i) { return (cfg.h/2-radius2)+getVerticalPosition(i, radius2, cfg.factor); })
-
-            
-          
           }
 
           if(cfg.axisText) {
@@ -306,7 +293,6 @@ var RadarChart = {
 
         // content
         data.forEach(function(d){
-          console.log(d);
           d.axes.forEach(function(axis, i) {
             axis.x = (cfg.w/2-radius2)+getHorizontalPosition(i, radius2, (parseFloat(Math.max(axis.value - cfg.minValue, 0))/maxValue)*cfg.factor);
             axis.y = (cfg.h/2-radius2)+getVerticalPosition(i, radius2, (parseFloat(Math.max(axis.value - cfg.minValue, 0))/maxValue)*cfg.factor);
@@ -338,8 +324,6 @@ var RadarChart = {
           setTooltip(tooltip, false);
         });
 
- 
-
         polygon.exit()
         .classed('d3-exit', 1) // trigger css transition
         .transition().duration(cfg.animateDuration)
@@ -355,14 +339,10 @@ var RadarChart = {
           d3.select(this).classed(classed);
         })
         .transition().duration(cfg.animateDuration)
-        // styles should only be transitioned with css
-        //.style('stroke', function(d, i) { return cfg.color(i); })
-        //.style('fill', function(d, i) { return cfg.color(i); })
-        .style('stroke', function(d,i) { return color[group[d.country]];})
+        //color code using continent
+        .style('stroke', function(d,i) { return color[group[d.country]];}) 
         .style('fill', function(d,i) { return  color[group[d.country]];})
-        
-
-        .transition().duration(cfg.transitionDuration)
+        //.transition().duration(cfg.transitionDuration)
         // svg attrs with js
         .attr('points',function(d) {
           return d.axes.map(function(p) {
@@ -396,7 +376,6 @@ var RadarChart = {
           });
 
           var circle = circleGroups.selectAll('.circle').data(function(datum, i) {
-            //console.log(datum.country);
             return datum.axes.map(function(d) { return [d, i]; });
           });
 
@@ -521,12 +500,6 @@ var RadarChart = {
       value = cfg.color[key];
       newLegend(legend, value, key, i*50);
       i++;
-
   });
-
-
-
-
-
   }
 };
