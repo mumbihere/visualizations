@@ -2,14 +2,15 @@
 <html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-<link rel="stylesheet" href="./src/radar-chart.css">
+<link rel="stylesheet" href="/src/radar-chart.css">
 
 <head>
-<script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
-<script type="text/javascript" src="./src/radar-chart.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+<script type="text/javascript" src="../src/radar-chart.js"></script>
 
 
   <style>
+  /*Additional Styling*/
     body {
       padding: 20px;
     }
@@ -24,26 +25,24 @@
     .radar-chart.focus .area.focused {
       fill-opacity: 0.9;
       opacity: 1;
-
     }
   </style>
 
 
   </head>
   <body >
-    <h1>Radar Chart </h1>
-    <p>University Ranking Data 2011 top 100 schools only</p>
+    <h1>University Ranking  </h1>
+    <p>Times University Ranking Data showing the top 100 schools in the year 2011.</p>
 
 <script type="text/javascript">
 function drawRadar(){
   var mdata = [];
-
+  //import the data
   d3.csv("timesData.csv", function(csvdata) {
-
     csvdata.forEach(function(item, index){
       newSeries = {};
       newSeries.axes = []
-      newSeries.className = item.university_name+"("+item.year+")\n"+"-"+item.country;
+      newSeries.className = '#'+item.world_rank+' '+item.university_name+"("+item.year+")\n"+"-"+item.country;
       newSeries.country = item.country;
       newSeries.axes.push(
         {"axis":'World Rank', "value": parseFloat(item.world_rank)},
@@ -53,13 +52,9 @@ function drawRadar(){
         {"axis":'Income', "value": parseFloat(item.income)},
         {"axis":'International', "value": parseFloat(item.international)}
         );
-
       mdata.push(newSeries);
-      //console.log(newSeries);
     });
     RadarChart.draw("#chart-container", mdata);
-  //Scale for the radius
-
   });
 }
 </script>
