@@ -1,0 +1,101 @@
+university_name,country,world_rank,teaching,international,research,citations,income,total_score,num_students,student_staff_ratio,female_male_ratio,year,international_students
+Harvard University,United States of America,1,99.7,72.4,98.7,98.8,34.5,96.1,"20,152",8.9,0,2011,25
+California Institute of Technology,United States of America,2,97.7,54.6,98,99.9,83.7,96,"2,243",6.9,33 : 67,2011,27
+Massachusetts Institute of Technology,United States of America,3,97.8,82.3,91.4,99.9,87.5,95.6,"11,074",9,37 : 63,2011,33
+Stanford University,United States of America,4,98.3,29.5,98.1,99.2,64.3,94.3,"15,596",7.8,42:58:00,2011,22
+Princeton University,United States of America,5,90.9,70.3,95.4,99.9,0,94.2,"7,929",8.4,45:55:00,2011,27
+University of Cambridge,United Kingdom,6,90.5,77.7,94.1,94,57,91.2,"18,812",11.8,46:54:00,2011,34
+University of Oxford,United Kingdom,6,88.2,77.2,93.9,95.1,73.5,91.2,"19,919",11.6,46:54:00,2011,34
+"University of California, Berkeley",United States of America,8,84.2,39.6,99.3,97.8,0,91.1,"36,186",16.4,50:50:00,2011,15
+Imperial College London,United Kingdom,9,89.2,90,94.5,88.3,92.9,90.6,"15,060",11.7,37 : 63,2011,51
+Yale University,United States of America,10,92.1,59.2,89.7,91.5,0,89.5,"11,751",4.4,50:50:00,2011,20
+"University of California, Los Angeles",United States of America,11,83,48.1,92.9,93.2,0,87.7,"38,206",10.3,52:48:00,2011,15
+University of Chicago,United States of America,12,79.1,62.8,87.9,96.9,0,86.9,"14,221",6.9,42:58:00,2011,21
+Johns Hopkins University,United States of America,13,80.9,58.5,89.2,92.3,100,86.4,"15,128",3.6,50:50:00,2011,23
+Cornell University,United States of America,14,82.2,62.4,88.8,88.1,34.7,83.9,"21,424",10.2,48:52:00,2011,19
+ETH Zurich _ Swiss Federal Institute of Technology Zurich,Switzerland,15,77.5,93.7,87.8,83.1,0,83.4,"18,178",14.7,31 : 69,2011,37
+University of Michigan,United States of America,15,83.9,53.3,89.1,84.1,59.6,83.4,"41,786",9,48:52:00,2011,16
+University of Toronto,Canada,17,75.8,0,87.9,82.2,0,82,"66,198",19.5,0:00:00,2011,15
+Columbia University,United States of America,18,73.8,90.9,73.8,92.6,0,81,"25,055",5.9,0:00:00,2011,28
+University of Pennsylvania,United States of America,19,71.8,32.9,82.7,93.6,43.7,79.5,"20,376",6.5,51:49:00,2011,20
+Carnegie Mellon University,United States of America,20,70.3,39.1,79.3,95.7,53.7,79.3,"11,885",13.1,39 : 61,2011,35
+University of Hong Kong,Hong Kong,21,68.4,91.4,71.4,96.1,56.5,79.2,"19,835",17.6,53:47:00,2011,38
+University College London,United Kingdom,22,74,90.8,81.6,80.6,39,78.4,"26,607",10.7,56:44:00,2011,46
+University of Washington,United States of America,23,68.2,49,77.1,95.9,32.8,78,"44,020",11.8,53:47:00,2011,13
+Duke University,United States of America,24,66.8,49.4,71.5,92.3,100,76.5,"15,172",4.8,49:51:00,2011,17
+Northwestern University,United States of America,25,64.5,60.5,68.8,95.3,0,75.9,"18,334",13.8,48:52:00,2011,15
+University of Tokyo,Japan,26,87.7,18.4,91.9,58.1,0,75.6,"26,199",5.7,0:00:00,2011,10
+Georgia Institute of Technology,United States of America,27,67.9,73.2,72.6,83.2,95.1,75.3,"19,967",20.1,31 : 69,2011,26
+Pohang University of Science and Technology,South Korea,28,69.5,32.6,62.5,96.5,100,75.1,"3,055",10.1,0.888888889,2011,4
+"University of California, Santa Barbara",United States of America,29,56.6,64.3,68,98.8,89.8,75,"22,020",27.3,52:48:00,2011,11
+University of British Columbia,Canada,30,65.1,93.3,74.8,80.3,42.6,73.8,"50,152",17.6,54:46:00,2011,25
+University of North Carolina at Chapel Hill,United States of America,30,70.9,21.5,75.1,85,50.2,73.8,"26,518",7.3,58:42:00,2011,8
+"University of California, San Diego",United States of America,32,59.8,31.6,76.3,90.8,51.8,73.2,"27,233",6.5,48:52:00,2011,11
+University of Illinois at Urbana0Champaign,United States of America,33,68.1,55.9,80.9,72.9,0,73,"42,727",18.7,47:53:00,2011,20
+National University of Singapore,Singapore,34,65.5,97.8,72.6,78.7,40.5,72.9,"31,592",15.5,49:51:00,2011,34
+McGill University,Canada,35,69,85.9,74.9,69,0,71.7,"31,326",13.7,56:44:00,2011,23
+University of Melbourne,Australia,36,58.7,88,69.2,83.3,47.7,71,"40,128",23.7,55:45:00,2011,35
+Peking University,China,37,76.4,68.6,61.3,72.2,98.6,70.7,"40,148",8.3,0:00:00,2011,14
+Washington University in St Louis,United States of America,38,58.9,56.4,63,88.6,0,69.9,"12,528",5.7,0:00:00,2011,17
+Äcole Polytechnique,France,39,57.9,77.9,56.1,91.4,0,69.5,"2,429",4.8,0.806944444,2011,30
+University of Edinburgh,United Kingdom,40,59.9,67.3,61.9,86.8,42.2,69.2,"25,774",14.1,58:42:00,2011,36
+Hong Kong University of Science and Technology,Hong Kong,41,50.4,97.4,51.8,98.2,64.1,69,"11,385",23.8,0:00:00,2011,36
+Äcole Normale Sup_rieure,France,42,66.8,44.9,48.2,95.7,30.7,68.6,"2,400",7.9,46:54:00,2011,20
+Australian National University,Australia,43,51.9,93.9,62.4,81,0,67,"14,604",19.2,52:48:00,2011,35
+Karolinska Institute,Sweden,43,65.8,0,72.7,62.3,73.3,67,"7,774",11.5,70:30:00,2011,22
+University of G_ttingen,Germany,43,57.3,44.5,55.9,92.5,31.7,67,"25,581",25.6,51:49:00,2011,12
+University of Wisconsin,United States of America,43,55.5,43.7,64.6,83.4,0,67,0,0,0:00:00,2011,0
+Rice University,United States of America,47,57.4,31.2,50.6,99.1,29.2,66.9,"6,333",9,44:56:00,2011,26
+Äcole Polytechnique F_d_rale de Lausanne,Switzerland,48,55,100,56.1,83.8,38,66.5,"9,666",10.5,27 : 73,2011,54
+"University of California, Irvine",United States of America,49,49.4,66.3,54.7,91.6,0,66,"26,614",16.1,52:48:00,2011,16
+University of Science and Technology of China,China,49,57.5,0,48.6,92.7,30.3,66,"14,290",7.9,0:00:00,2011,2
+Vanderbilt University,United States of America,51,64.9,22.1,59.5,78.1,84.2,65.9,"12,161",3.6,52:48:00,2011,10
+University of Minnesota,United States of America,52,57.6,23,69.1,76.4,0,65.6,"46,825",18,52:48:00,2011,13
+Tufts University,United States of America,53,64.1,28.3,52.3,83.9,0,65.2,"10,410",10,54:46:00,2011,14
+"University of California, Davis",United States of America,54,57.3,60.5,70.7,68.8,48,65,"35,364",13.9,54:46:00,2011,13
+Brown University,United States of America,55,59.7,60.5,57,77.7,0,64.9,"8,653",10.1,0:00:00,2011,19
+University of Massachusetts,United States of America,56,61.3,22.6,72.6,67.9,53.9,64.7,"56,959",13,49:51:00,2011,11
+Kyoto University,Japan,57,78.9,18.4,77.7,46.3,67.1,64.6,"22,809",5.6,0:00:00,2011,7
+Tsinghua University,China,58,74.9,43,66.6,52.7,97.8,64.2,"39,763",13.7,32 : 68,2011,10
+Boston University,United States of America,59,53.6,38.1,51.9,91.4,29.6,64,"24,789",8.6,58:42:00,2011,17
+New York University,United States of America,60,62,31.8,50.7,82.9,0,63.9,"42,056",6.8,55:45:00,2011,19
+Emory University,United States of America,61,63.4,52.3,48.4,77.8,0,63,"12,338",4.5,56:44:00,2011,18
+LMU Munich,Germany,61,59.1,43.1,57.5,76.4,40.4,63,"35,691",15.5,62:38:00,2011,13
+University of Notre Dame,United States of America,63,56.4,35.6,45.1,89.1,0,62.8,"11,829",13.8,44:56:00,2011,10
+University of Pittsburgh,United States of America,64,58.5,25.2,58.3,78.3,37.9,62.7,"26,485",5.8,51:49:00,2011,10
+Case Western Reserve University,United States of America,65,67.2,56.5,53.8,66,0,62.2,"9,259",6.4,48:52:00,2011,17
+Ohio State University,United States of America,66,63.5,64,54.9,67.2,0,62.1,"51,462",13.4,49:51:00,2011,12
+University of Colorado Boulder,United States of America,67,46.4,31.7,58.1,83.4,0,61.6,"29,325",16.1,45:55:00,2011,8
+University of Bristol,United Kingdom,68,49.6,67.2,53.1,80.9,36.2,61.4,"17,906",14,53:47:00,2011,25
+"University of California, Santa Cruz",United States of America,68,38.3,16.7,50.4,99.6,0,61.4,"17,404",22.7,53:47:00,2011,1
+Yeshiva University,United States of America,68,63.5,53.3,46.7,74.4,0,61.4,"6,753",5.5,53:47:00,2011,7
+University of Sydney,Australia,71,49.8,89.6,61.9,64.3,90.8,61.2,"41,868",20.2,57:43:00,2011,28
+University of Virginia,United States of America,72,62,42.2,55.4,68.6,0,61.1,"23,845",10.2,52:48:00,2011,12
+University of Adelaide,Australia,73,46.5,87.5,38.8,90.5,52.7,60.7,"20,771",30.1,48:52:00,2011,26
+University of Southern California,United States of America,73,65.4,31.2,48.7,71.9,0,60.7,"36,534",12.9,52:48:00,2011,20
+William & Mary,United States of America,75,53.1,20.9,36.1,95.6,0,60.4,"7,867",11.8,54:46:00,2011,7
+Trinity College Dublin,Republic of Ireland,76,47.7,84.2,45.3,84.4,31.6,60.3,"15,521",18,57:43:00,2011,25
+KingÍs College London,United Kingdom,77,48.5,85.9,54.5,72.1,44.1,59.7,"21,394",11.4,61:39:00,2011,37
+Stony Brook University,United States of America,78,48.5,52.2,43.6,85.8,0,59.6,"21,908",10.9,50:50:00,2011,24
+Korea Advanced Institute of Science and Technology (KAIST),South Korea,79,71.3,36.7,63.4,45.5,100,59.5,"9,027",10,0.888888889,2011,9
+University of Sussex,United Kingdom,79,42.4,72.8,42.4,91.6,29.1,59.5,"12,001",17.4,54:46:00,2011,35
+The University of Queensland,Australia,81,51.8,74.2,53.4,69,57.1,59.1,"34,718",32.7,53:47:00,2011,27
+University of York,United Kingdom,81,47.9,66.6,46.2,81.9,36.2,59.1,0,0,0:00:00,2011,0
+Heidelberg University,Germany,83,59.2,63.4,47.5,70.3,39.1,59,"28,881",24.5,55:45:00,2011,17
+University of Utah,United States of America,83,55.8,22.5,54.2,72,0,59,"25,674",16.9,45:55:00,2011,9
+Durham University,United Kingdom,85,39.8,65.7,44.1,91,33.9,58.9,"15,489",15.7,54:46:00,2011,24
+London School of Economics and Political Science,United Kingdom,86,62.4,99.5,56.2,51.6,38.4,58.3,0,0,0:00:00,2011,0
+University of Manchester,United Kingdom,87,56.5,79.1,56.2,59.2,39,58,"34,938",15.3,52:48:00,2011,34
+"Royal Holloway, University of London",United Kingdom,88,37.7,92.9,36.2,93.2,30.5,57.9,"8,747",15.9,57:43:00,2011,37
+Lund University,Sweden,89,46.3,56.8,60.8,67.6,33.2,57.8,"28,251",11.5,0:00:00,2011,15
+University of Southampton,United Kingdom,90,50.8,69,47.8,72.9,37.7,57.7,"20,925",13.5,53:47:00,2011,29
+University of Zurich,Switzerland,90,56.6,87.9,47,65,43.8,57.7,"26,583",6.5,57:43:00,2011,19
+Wake Forest University,United States of America,90,54.6,24.4,42.9,79.2,0,57.7,"7,326",4.6,51:49:00,2011,5
+McMaster University,Canada,93,44.7,0,58.7,68.5,0,57.6,"23,823",19.3,53:47:00,2011,15
+University College Dublin,Republic of Ireland,94,42.4,87,36.6,86.3,0,57.5,"22,193",24.5,0:00:00,2011,23
+George Washington University,United States of America,95,60.6,39.6,43.1,70.2,0,57.3,"20,541",12,56:44:00,2011,16
+University of Arizona,United States of America,95,52.4,21.9,52.2,70.1,84.2,57.3,"36,429",12.7,52:48:00,2011,8
+University of Basel,Switzerland,95,50.2,91.3,37.1,78.3,45.8,57.3,"12,551",17.3,54:46:00,2011,24
+"University of Maryland, College Park",United States of America,98,45.4,35.4,48.6,79.2,0,57.2,"31,331",8.4,48:52:00,2011,9
+Dartmouth College,United States of America,99,44.7,31,49.2,79.7,0,57.1,"6,178",6.6,47:53:00,2011,16
+Äcole Normale Sup_rieure de Lyon,France,100,51.1,37.6,34.4,88.8,26.1,57,"2,218",8,49:51:00,2011,14
