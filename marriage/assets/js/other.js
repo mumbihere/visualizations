@@ -1,105 +1,98 @@
-
-
-var csv = [];
-var univs = [];
-
-// Reading and manipulating the csv
-
-
-//High Charts
 // Data gathered from http://populationpyramid.net/germany/2015/
 
-// Age categories
-var categories = ['0-4', '5-9', '10-14', '15-19',
-        '20-24', '25-29', '30-34', '35-39', '40-44',
-        '45-49', '50-54', '55-59', '60-64', '65-69',
-        '70-74', '75-79', '80-84', '85-89', '90-94',
-        '95-99', '100 + '];
-$(document).ready(function () {
-    Highcharts.chart('highchart_container_1', {
-        chart: {
-            type: 'bar',
-            backgroundColor: 'transparent',
-            style: {
-	            fontFamily: 'monospace',
-	            color: "#f00"
-	        }
 
-        },
-        title: {
-            text: 'Percentage Married per age-group.'
-        },
-        subtitle: {
-            //text: 'Source: <a href="http://populationpyramid.net/germany/2015/">Population Pyramids of the World from 1950 to 2100</a>'
-        },
-        xAxis: [{
-            categories: categories,
-            reversed: false,
-            labels: {
-                step: 1
-            }
-        }, { // mirror axis on right side
-            opposite: true,
-            reversed: false,
-            categories: categories,
-            linkedTo: 0,
-            labels: {
-                step: 1
-            }
-        }],
-        yAxis: {
-            title: {
-                text: null
-            },
-            labels: {
-                formatter: function () {
-                    return Math.abs(this.value) + '%';
-                }
-            }
-        },
 
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
+$.get('assets/data/marriage_ages.csv', function(csv) {
+    var countries = [];
+    var data = [];
+    var lines = csv.split('\n');
+    $.each(lines, function(lineNo, line) {
+        columns = line.split(',')
+        if(lineNo>0){
+            countries.push(columns[0]);
+            genderslices = [[],[]];
+            genderslices[0].push(columns.slice(3,14));//male slice
+            genderslices[1].push(columns.slice(15,26)); //female slice
+            data.push(genderslices)   
+        }
+    });
+    //console.log(data[0][1][0]);//Finland,male/female, actual data
+    // console.log(countries);
 
-        tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                    'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
-            }
-        },
-
-        series: [{
-            name: 'Male',
-            data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
-                -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
-                -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
-        }, {
-            name: 'Female',
-            data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
-                3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
-                1.8, 1.2, 0.6, 0.1, 0.0]
-        }]
+    // Dynamically assign values to the dropdown
+    $.each(countries, function(i, p) {
+        $('#dropdown-1').append($('<option></option>').val(p).html(p));
     });
 
-	//Start of High Chart 2
-    Highcharts.chart('highchart_container_2', {
-        chart: {
-            type: 'bar',
-            backgroundColor: 'transparent',
-            style: {
-	            fontFamily: 'monospace',
-	            color: "#f00"
-	        }
+    $.each(countries, function(i, p) {
+        $('#dropdown-2').append($('<option></option>').val(p).html(p));
+    });
+});//end of get
 
+
+function getSelectedCountry(selectedcountry, dropdown_id) {
+    var selected = selectedcountry.options[selectedcountry.selectedIndex].innerHTML;
+
+    //Update the chart top title
+    $(dropdown_id).val(selected).html(selected);
+
+    //console.log(selected);
+    $.get('assets/data/marriage_ages.csv', function(csv) {
+        var countries = [];
+        var data = [];
+        var lines = csv.split('\n');
+        var chartdiv = 0
+        $.each(lines, function(lineNo, line) {
+            columns = line.split(',')
+            if(lineNo>0){
+                countries.push(columns[0]);
+                genderslices = [[],[]];
+                genderslices[0].push(columns.slice(3,13));//male slice
+                genderslices[1].push(columns.slice(15,25)); //female slice
+                data.push(genderslices)        
+            }
+        });
+        //console.log(data[0][1][0]);//Finland,male/female, actual data
+        // console.log(countries);
+        var countryindex = countries.indexOf(selected);
+        console.log(dropdown_id);
+
+        if(dropdown_id == '#country-1'){ chartdiv='highchart_container_1'}
+        else{chartdiv='highchart_container_2'};
+        drawColumnChart(selected,data[countryindex],chartdiv);
+    });//end of get
+};
+
+
+function drawColumnChart(countryname,data,highchartdiv){
+    // male_slice = [ -2.5, -2.7, -3.1, -3.2,
+    //             -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
+    //             -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0];
+    // female_slice =[2.4, 2.6, 3.0, 3.1, 2.9,
+    //             3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
+    //             1.8, 1.2, 0.6, 0.1, 0.0];
+    // countryname = 'Germany';
+    male_slice = data[0][0].map(Number);
+    female_slice = data[1][0].map(Number);
+    var categories = ['15-19',
+        '20-24', '25-29', '30-34', '35-39', '40-44',
+        '45-49', '50-54', '55-59', '60-64', '65 and up',
+        ];
+
+    console.log(male_slice);
+    console.log(female_slice);
+
+
+
+    Highcharts.chart(highchartdiv, {
+        chart: {
+            type: 'bar'
         },
         title: {
-            text: 'Percentage Married per age-group.'
+            text: '% of Persons Married per Age-group in  '+ countryname
         },
         subtitle: {
-            //text: 'Source: <a href="http://populationpyramid.net/germany/2015/">Population Pyramids of the World from 1950 to 2100</a>'
+            text: ''
         },
         xAxis: [{
             categories: categories,
@@ -135,26 +128,61 @@ $(document).ready(function () {
 
         tooltip: {
             formatter: function () {
-                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                    'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                return '<b>' + this.series.name + ',  aged' + this.point.category + '</b><br/>' +
+                    '%Married: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
             }
         },
 
         series: [{
             name: 'Male',
-            data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
-                -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
-                -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
+            data: male_slice
         }, {
             name: 'Female',
-            data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
-                3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
-                1.8, 1.2, 0.6, 0.1, 0.0]
+            data: female_slice
         }]
-    });//End of highchart  2
+    });
+};//end of drawColumnChart
 
 
 
+
+//Populate Starter Charts
+$(document).ready(function () {
+var starters = ['Iceland', 'Hungary']
+    $.get('assets/data/marriage_ages.csv', function(csv) {
+        var countries = [];
+        var data = [];
+        var lines = csv.split('\n');
+        var chartdiv = 0
+        $.each(lines, function(lineNo, line) {
+            columns = line.split(',')
+            if(lineNo>0){
+                countries.push(columns[0]);
+                genderslices = [[],[]];
+                genderslices[0].push(columns.slice(3,13));//male slice
+                genderslices[1].push(columns.slice(15,25)); //female slice
+                data.push(genderslices)        
+            }
+        });
+        //console.log(data[0][1][0]);//Finland,male/female, actual data
+        // console.log(countries);
+
+        //Draw the first starter graph
+        document.getElementById("country-1").innerHTML = starters[0];
+        var countryindex_1 = countries.indexOf(starters[0]);
+        drawColumnChart(starters[0],data[countryindex_1],'highchart_container_1');
+
+
+        //Draw the second starter graph
+        document.getElementById("country-2").innerHTML = starters[1];
+        var countryindex_2 = countries.indexOf(starters[1]);
+        drawColumnChart(starters[1],data[countryindex_2],'highchart_container_2');
+    });//end of get
 
 });
+
+
+
+
+
 

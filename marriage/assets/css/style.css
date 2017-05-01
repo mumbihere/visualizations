@@ -957,15 +957,11 @@ textarea::-ms-input-placeholder
 /*    border-color: #EDAE49;*/
 }
 .country-div {
-    border-style: solid;
-    border-width: 2px;
+/*    border-style: solid;
+    border-width: 2px;*/
+    padding: 10px;
 }
 #country-1, #country-2 {
     text-align: center; 
 }
-.country-div {
-    border-style: solid;
-    border-width: 2px;
 
-
-}

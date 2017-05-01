@@ -22,14 +22,21 @@
         <!--Theme custom css -->
         <link rel="stylesheet" href="assets/css/style.css">
 
+        <!-- selectize - for the dropdowns -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.default.css">
+
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="assets/css/responsive.css" />
+
+
 
         <!--High Charts JS-->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script type="text/javascript" src="assets/js/other.js"> </script>
+
 
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -133,49 +140,40 @@
                 <div class="row">
                     <div class="heading-content"><h3>The World</h3><h5>Here's how the world looks like in terms of marriage and measures of women freedoms </h5></div>
                 </div>
+                <!-- Start of map -->
 
-                <!-- Example row of columns -->
                 <div class="row" style="height:600px;">
                 <div class='col-md-9 tableauPlaceholder' id='viz1493618501413' style='margin-left:200px;position:relative;padding: 10px;
     '><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YC&#47;YC77DCPDW&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='path' value='shared&#47;YC77DCPDW' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YC&#47;YC77DCPDW&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1493618501413');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='804px';vizElement.style.height='669px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
                 </div>
+                <!-- End of map -->
 
                 <div class="row heading-content"><h5 style=""><div class="col-md-12">Select any two countries to compare </h5></div></div>
 
                 <!-- Drop down menu row-->
                 <div class="row" id="dropdown-div">
                       <div class="col-md-3 col-md-offset-3">
-                        <select id="dropdown-1" placeholder="Select Country" onchange="getSelectedUniv(this, '#country-1')">
+                        <select id="dropdown-1" placeholder="Select Country" onchange="getSelectedCountry(this, '#country-1')">
                             <option value="">Select Country</option>
                         </select>
                       </div>
                       <div class="col-md-3">
-                        <select id="dropdown-2" placeholder="Select Country" onchange="getSelectedUniv(this, '#country-2')">
+                        <select id="dropdown-2" placeholder="Select Country" onchange="getSelectedCountry(this, '#country-2')">
                           <option value="">Select Country</option>
                         </select>
                       </div>
                   </div>
 
-
-
-
-
                   <!-- Column Charts-->
                   <div row>
 
                       <div class="col-md-6 country-div" id="country1-div">
-                        <svg width="30" height="30" class="color-div">
-                          <rect width="50" height="50" style="fill:#1B998B"></rect>
-                        </svg>
                         <h3 id="country-1">Sweden</h3>
-                            <div id="highchart_container_1" style=""></div>
+                            <div id="highchart_container_1" style="height:400px"></div>
                                            </div>
  
                       <div class="country-div col-md-6" id="country2-div">
-                        <svg width="30" height="30" class="color-div">
-                          <rect width="50" height="50" style="fill:#EDAE49"></rect>
-                        </svg>
                         <h3 id="country-2">Niger</h3>
                             <div id="highchart_container_2" style=""></div>
                       </div>
@@ -238,12 +236,12 @@
                 <!-- Example row of columns -->
                 <div class="row" id="dropdown-div">
                   <div class="col-md-3 col-md-offset-3">
-                    <select id="dropdown-1" placeholder="Select Country" onchange="getSelectedUniv(this, '#country-1')">
+                    <select id="dropdown-3" placeholder="Select Country" onchange="getSelectedCountry(this, '#country-3')">
                         <option value="">Select Country</option>
                     </select>
                   </div>
                   <div class="col-md-3">
-                    <select id="dropdown-2" placeholder="Select Country" onchange="getSelectedUniv(this, '#country-2')">
+                    <select id="dropdown-4" placeholder="Select Country" onchange="getSelectedCountry(this, '#country-4')">
                       <option value="">Select Country</option>
                     </select>
                   </div>
@@ -255,7 +253,7 @@
                     <svg width="30" height="30" class="color-div">
                       <rect width="50" height="50" style="fill:#1B998B"></rect>
                     </svg>
-                    <h3 id="country-1">Sweden</h3>
+                    <h3 id="country-3">Sweden</h3>
                         <div id="radarchart1" style="border:2px solid #762C2C;margin:auto;min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
                                        </div>
 
@@ -263,7 +261,7 @@
                     <svg width="30" height="30" class="color-div">
                       <rect width="50" height="50" style="fill:#EDAE49"></rect>
                     </svg>
-                    <h3 id="country-2">Niger</h3>
+                    <h3 id="country-4">Niger</h3>
                         <div id="radarchart2" style="border:2px solid #762C2C;margin:auto;min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
                   </div>
                 </div>
@@ -304,8 +302,7 @@
         <script src="assets/js/vendor/bootstrap.min.js"></script>
 
 
-        <script src="http://maps.google.com/maps/api/js"></script>
-        <script src="assets/js/gmaps.min.js"></script>
+        <script src="https://maps.google.com/maps/api/js"></script>
 
         <script src="assets/js/jquery.magnific-popup.js"></script>
 
@@ -313,8 +310,12 @@
         <script src="assets/js/main.js"></script>
        
         <!-- custom js -->
-        <script type="text/javascript" src="assets/js/other.js"> </script>
         <script type="text/javascript" src="assets/js/radar.js"> </script>
+
+        <script src="assets/js/gmaps.min.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+
+
 
     </body>
 </html>
