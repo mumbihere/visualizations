@@ -79,8 +79,8 @@ function drawColumnChart(countryname,data,highchartdiv){
         '45-49', '50-54', '55-59', '60-64', '65 and up',
         ];
 
-    console.log(male_slice);
-    console.log(female_slice);
+    //console.log(male_slice);
+    //console.log(female_slice);
 
 
 
