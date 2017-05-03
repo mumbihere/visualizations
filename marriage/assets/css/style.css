@@ -89,9 +89,7 @@ PRE LOADER
 }
 p {
     margin: 0 0 15px;
-/*    font-family: 'Arial', sans-serif,Arial ;
-*/    font-family: 'latolight';
-
+    font-family: 'Avenir Black',sans-serif, Arial;
     font-size: 18px;
     margin-top: 1.2rem;
 
