@@ -63,7 +63,14 @@ function getSelectedCountry(selectedcountry, dropdown_id) {
     });//end of get
 };
 
-
+function negate(mylist){
+    var otherlist = []
+    mylist = mylist.map(Number)
+    for(i = 0; i < mylist.length; i++){
+        otherlist.push(-(mylist[i]));
+    };
+    return otherlist;
+};
 function drawColumnChart(countryname,data,highchartdiv){
     // male_slice = [ -2.5, -2.7, -3.1, -3.2,
     //             -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
@@ -72,7 +79,8 @@ function drawColumnChart(countryname,data,highchartdiv){
     //             3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
     //             1.8, 1.2, 0.6, 0.1, 0.0];
     // countryname = 'Germany';
-    male_slice = data[0][0].map(Number);
+
+    male_slice = negate(data[0][0]);
     female_slice = data[1][0].map(Number);
     var categories = ['15-19',
         '20-24', '25-29', '30-34', '35-39', '40-44',
@@ -89,7 +97,7 @@ function drawColumnChart(countryname,data,highchartdiv){
             type: 'bar'
         },
         title: {
-            text: '% of Persons Married per Age-group in  '+ countryname
+            text: '% of Married Persons per Age-group in  '+ countryname
         },
         subtitle: {
             text: ''
@@ -148,7 +156,7 @@ function drawColumnChart(countryname,data,highchartdiv){
 
 //Populate Starter Charts
 $(document).ready(function () {
-var starters = ['Iceland', 'Hungary']
+var starters = ['Iceland', 'Hungary'];
     $.get('assets/data/marriage_ages.csv', function(csv) {
         var countries = [];
         var data = [];
