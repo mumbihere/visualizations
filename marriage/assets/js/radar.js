@@ -28,7 +28,7 @@ $.get('assets/data/aggregated.csv', function(csv) {
     });
 
     //Populate Starter Charts
-    var starters = ['Sweden', 'Niger'];
+    var starters = ['Sweden', 'Mexico'];
     var starterdata = [[],[]];
 
     // Update the dropdowns to reflect initial selection
@@ -151,7 +151,7 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
 
         tooltip: {
             shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
         },
 
         legend: {
@@ -204,7 +204,7 @@ Highcharts.chart(chartdivs[1], {
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true

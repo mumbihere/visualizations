@@ -131,7 +131,7 @@ function drawColumnChart(countryname,data,highchartdiv){
 
 //Populate Starter Charts
 $(document).ready(function () {
-var starters = ['Sweden', 'Niger'];
+var starters = ['Sweden', 'Mexico'];
     $.get('assets/data/marriage_ages.csv', function(csv) {
         var countries = [];
         var data = [];
