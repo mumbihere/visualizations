@@ -65,7 +65,10 @@ function drawColumnChart(countryname,data,highchartdiv){
 
     Highcharts.chart(highchartdiv, {
         chart: {
-            type: 'bar'
+            type: 'bar',
+            style: {
+                fontFamily: 'Avenir Black'
+            }
         },
         title: {
             text: '% of Married Persons per Age-group in  '+ countryname

@@ -138,10 +138,12 @@ h3 {
     /*font-family: 'Lane', sans-serif;*/
     font-weight: 300;
     margin: 0;
+    fontFamily: 'Avenir Black';
 }
 h4,
 h5 {
     /*font-family: 'roboto', sans-serif;*/
+    fontFamily: 'Avenir Black';
     font-weight: 300;
     margin: 0;
     line-height: 2rem;

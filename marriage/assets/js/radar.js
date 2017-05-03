@@ -118,7 +118,10 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
         chart: {
             polar: true,
             type: 'line',
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            style: {
+                fontFamily: 'Avenir Black'
+            }
 
         },
 
@@ -177,7 +180,10 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
 //draw column chart
 Highcharts.chart(chartdivs[1], {
     chart: {
-        type: 'column'
+        type: 'column',
+        style: {
+                fontFamily: 'Avenir Black'
+            }
     },
     title: {
         text: ''
