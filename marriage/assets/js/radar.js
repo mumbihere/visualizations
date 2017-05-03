@@ -28,7 +28,7 @@ $.get('assets/data/aggregated.csv', function(csv) {
     });
 
     //Populate Starter Charts
-    var starters = ['Panama', 'Qatar'];
+    var starters = ['Sweden', 'Niger'];
     var starterdata = [[],[]];
 
     // Update the dropdowns to reflect initial selection
