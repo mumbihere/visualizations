@@ -517,6 +517,7 @@ textarea::-ms-input-placeholder
 /*    background: url(../images/header-bg.png) no-repeat top;
     background-color: rgba(83,160,192, .9);*/
     background-color: rgb(246,243,243);
+    
     background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;

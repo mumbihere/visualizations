@@ -1,33 +1,4 @@
-// Data gathered from http://populationpyramid.net/germany/2015/
 
-
-
-$.get('assets/data/marriage_ages.csv', function(csv) {
-    var countries = [];
-    var data = [];
-    var lines = csv.split('\n');
-    $.each(lines, function(lineNo, line) {
-        columns = line.split(',')
-        if(lineNo>0){
-            countries.push(columns[0]);
-            genderslices = [[],[]];
-            genderslices[0].push(columns.slice(3,14));//male slice
-            genderslices[1].push(columns.slice(15,26)); //female slice
-            data.push(genderslices)   
-        }
-    });
-    //console.log(data[0][1][0]);//Finland,male/female, actual data
-    // console.log(countries);
-
-    // Dynamically assign values to the dropdown
-    $.each(countries, function(i, p) {
-        $('#dropdown-1').append($('<option></option>').val(p).html(p));
-    });
-
-    $.each(countries, function(i, p) {
-        $('#dropdown-2').append($('<option></option>').val(p).html(p));
-    });
-});//end of get
 
 
 function getSelectedCountry(selectedcountry, dropdown_id) {
@@ -140,6 +111,7 @@ function drawColumnChart(countryname,data,highchartdiv){
                     '%Married: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
             }
         },
+        colors: ['#7d97a3', '#0c1f28'],
 
         series: [{
             name: 'Male',
@@ -185,6 +157,19 @@ var starters = ['Iceland', 'Hungary'];
         document.getElementById("country-2").innerHTML = starters[1];
         var countryindex_2 = countries.indexOf(starters[1]);
         drawColumnChart(starters[1],data[countryindex_2],'highchart_container_2');
+
+            // Dynamically assign values to the dropdown
+        $.each(countries, function(i, p) {
+            $('#dropdown-1').append($('<option></option>').val(p).html(p));
+        });
+
+        $.each(countries, function(i, p) {
+            $('#dropdown-2').append($('<option></option>').val(p).html(p));
+        });
+
+
+
+
     });//end of get
 
 });
