@@ -143,7 +143,7 @@ h3 {
 h4,
 h5 {
     /*font-family: 'roboto', sans-serif;*/
-    fontFamily: 'Avenir Black';
+    font-family: 'Avenir Black';
     font-weight: 300;
     margin: 0;
     line-height: 2rem;
