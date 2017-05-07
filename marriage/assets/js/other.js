@@ -8,7 +8,7 @@ function getSelectedCountry(selectedcountry, dropdown_id) {
     $(dropdown_id).val(selected).html(selected);
 
     //console.log(selected);
-    $.get('assets/data/marriage_ages.csv', function(csv) {
+    $.get('assets/data/marriage_ages2.csv', function(csv) {
         var countries = [];
         var data = [];
         var lines = csv.split('\n');
@@ -110,8 +110,8 @@ function drawColumnChart(countryname,data,highchartdiv){
 
         tooltip: {
             formatter: function () {
-                return '<b>' + this.series.name + ',  aged' + this.point.category + '</b><br/>' +
-                    '%Married: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                return '<b>' + this.series.name + ',  aged ' + this.point.category + '</b><br/>' +
+                    'Married: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0)+'%';
             }
         },
         colors: ['#7d97a3', '#0c1f28'],
@@ -132,7 +132,7 @@ function drawColumnChart(countryname,data,highchartdiv){
 //Populate Starter Charts
 $(document).ready(function () {
 var starters = ['Sweden', 'Mexico'];
-    $.get('assets/data/marriage_ages.csv', function(csv) {
+    $.get('assets/data/marriage_ages2.csv', function(csv) {
         var countries = [];
         var data = [];
         var lines = csv.split('\n');

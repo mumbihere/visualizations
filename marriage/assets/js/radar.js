@@ -160,7 +160,7 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             // y: 70,
             layout: 'horizontal'
         },
-        colors: ['#7d97a3', '#0c1f28'],
+        // colors: ['#7d97a3', '#0c1f28'],
 
 
         series: [{
@@ -215,7 +215,7 @@ Highcharts.chart(chartdivs[1], {
             borderWidth: 0
         }
     },
-    colors: ['#7d97a3', '#0c1f28'],
+    // colors: ['#7d97a3', '#0c1f28'],
     series: [{
         name: series1_name,
         data: series1_data
