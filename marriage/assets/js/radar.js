@@ -78,7 +78,7 @@ function getSelectedCountryradar(selectedcountry, dropdown_id) {
             columns = line.split(',')
             if(lineNo>0){
                 countries.push(columns[0]);
-                data.push(columns.slice(1,6));//series data
+                data.push(columns.slice(7,12));//series data
             }
         });
         //console.log(data);//Finland,male/female, actual data
