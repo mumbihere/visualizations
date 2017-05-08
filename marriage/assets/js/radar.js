@@ -162,7 +162,7 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
 
         tooltip: {
             shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.percentage:,.1f}</b><br/>'
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
         },
 
         legend: {
