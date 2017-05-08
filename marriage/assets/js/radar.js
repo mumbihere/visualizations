@@ -11,7 +11,7 @@ $.get('assets/data/aggregated.csv', function(csv) {
         columns = line.split(',')
         if(lineNo>0){
             countries.push(columns[0]);
-            data.push(columns.slice(1,6));//series data
+            data.push(columns.slice(7,12));//series data
    
         }
     });
@@ -154,10 +154,15 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
                 enabled: false
             }
         },
+        zAxis:{
+            min: 0,
+            max: 10,
+            showFirstLabel: false
+        },
 
         tooltip: {
             shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.percentage:,.1f}</b><br/>'
         },
 
         legend: {
@@ -173,6 +178,7 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             name: series1_name,
             data: series1_data,
             pointPlacement: 'on'
+
         },{
             name: series2_name,
             data: series2_data,
