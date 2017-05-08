@@ -129,7 +129,9 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             text: title,
             x: -80
         },
-
+        subtitle: {
+            text: 'Source: http://data.worldbank.org/'
+        },
         pane: {
             size: '80%'
         },
@@ -138,7 +140,8 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             categories:categories,
             tickmarkPlacement: 'on',
             lineWidth: 0,
-            labels:{align:'center',
+            labels:{
+                align:'center',
                 overflow:'justify'
             }
         },
@@ -146,7 +149,10 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
         yAxis: {
             gridLineInterpolation: 'polygon',
             lineWidth: 0,
-            min: 0
+            min: 0,
+            labels:{
+                enabled: false
+            }
         },
 
         tooltip: {
