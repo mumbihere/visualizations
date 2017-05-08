@@ -109,6 +109,14 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
     var series2_name =  countryname[1]; var series2_data = data[1][0];
     console.log(series1_name,series1_data);
     
+    function edit_tooltip(category,number_){
+        if(category == 'Marriage Age'){ return 17.6 + (number_ * 1.56)}
+            else{
+                return number_
+            }
+
+
+    };
   
     
 
@@ -160,10 +168,7 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             showFirstLabel: false
         },
 
-        tooltip: {
-            shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
-        },
+
 
         legend: {
             align: 'center',
@@ -185,7 +190,15 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             pointPlacement: 'on'
         }
 
-        ]
+        ],
+        tooltip: {
+            // pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
+
+            formatter: function () {
+                return '<span>' + this.series.name + ': <b>' + Highcharts.numberFormat(Math.abs(edit_tooltip(this.point.category,this.point.y)), 2)+'</b><br/>';
+            }
+
+        },
 
     });
 
@@ -215,11 +228,24 @@ Highcharts.chart(chartdivs[1], {
     },
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-        footerFormat: '</table>',
+        // pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        //     '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        // footerFormat: '</table>',
         shared: true,
-        useHTML: true
+        useHTML: true,
+
+        formatter: function () {
+                return '<tr><td style="color:' + this.series.color + ';padding:0">' + this.series.name + ':</td>' +
+                    '<td style="padding:0"><b>' + Highcharts.numberFormat(Math.abs(this.point.y), 0)+'</b></td></tr>';
+            }
+
+
+
+
+
+
+
+
     },
     plotOptions: {
         column: {
