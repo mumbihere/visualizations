@@ -113,8 +113,9 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
         if(category == 'Marriage Age'){ return 17.6 + (number_ * 1.56)}
         else if(category == 'School Expectancy'){ return 5 + (number_ * 1.13)}
         else if(category == 'Labor Force'){ return 12 + (number_ * 7.4)} 
-        // else if(category == 'Fertility rate'){ return 1.2 + (number_ * 0.64)}
-        // else if(category == 'Contraceptive Use'){ return 5.6 + (number_ * 8.28)}
+        else if(category == 'Fertility rate'){ return  (number_ * -6.4)/10 + 7.6}
+        else if(category == 'Contraceptive Use'){ return (number_ * 82.8)/10 + 5.6}
+        
 
     else {
                 return number_
