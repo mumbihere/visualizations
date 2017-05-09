@@ -164,6 +164,7 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
             gridLineInterpolation: 'polygon',
             lineWidth: 0,
             min: 0,
+            max: 10,
             labels:{
                 enabled: false
             }
