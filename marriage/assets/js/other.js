@@ -99,7 +99,9 @@ function drawColumnChart(countryname,data,highchartdiv){
                 formatter: function () {
                     return Math.abs(this.value) + '%';
                 }
-            }
+            },
+            min:-100,
+            max:100
         },
 
         plotOptions: {

@@ -229,6 +229,7 @@ Highcharts.chart(chartdivs[1], {
     },
     yAxis: {
         min: 0,
+        max: 10,
         title: {
             text: 'Values'
         }
