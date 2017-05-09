@@ -111,7 +111,12 @@ function drawCharts(countryname,data,chartdivs,dropdown_id){
     
     function edit_tooltip(category,number_){
         if(category == 'Marriage Age'){ return 17.6 + (number_ * 1.56)}
-            else{
+        else if(category == 'School Expectancy'){ return 5 + (number_ * 1.13)}
+        else if(category == 'Labor Force'){ return 12 + (number_ * 7.4)} 
+        // else if(category == 'Fertility rate'){ return 1.2 + (number_ * 0.64)}
+        // else if(category == 'Contraceptive Use'){ return 5.6 + (number_ * 8.28)}
+
+    else {
                 return number_
             }
 
