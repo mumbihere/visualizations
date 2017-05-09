@@ -18,8 +18,8 @@ function getSelectedCountry(selectedcountry, dropdown_id) {
             if(lineNo>0){
                 countries.push(columns[0]);
                 genderslices = [[],[]];
-                genderslices[0].push(columns.slice(3,13));//male slice
-                genderslices[1].push(columns.slice(15,25)); //female slice
+                genderslices[0].push(columns.slice(3,10));//male slice
+                genderslices[1].push(columns.slice(15,22)); //female slice
                 data.push(genderslices)        
             }
         });
@@ -55,7 +55,7 @@ function drawColumnChart(countryname,data,highchartdiv){
     female_slice = data[1][0].map(Number);
     var categories = ['15-19',
         '20-24', '25-29', '30-34', '35-39', '40-44',
-        '45-49', '50-54', '55-59', '60-64', '65 and up',
+        '45-49', '50-54',
         ];
 
     //console.log(male_slice);
@@ -144,8 +144,8 @@ var starters = ['Sweden', 'Mexico'];
             if(lineNo>0){
                 countries.push(columns[0]);
                 genderslices = [[],[]];
-                genderslices[0].push(columns.slice(3,13));//male slice
-                genderslices[1].push(columns.slice(15,25)); //female slice
+                genderslices[0].push(columns.slice(3,10));//male slice
+                genderslices[1].push(columns.slice(15,22)); //female slice
                 data.push(genderslices)        
             }
         });
