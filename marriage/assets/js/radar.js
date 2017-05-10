@@ -1,5 +1,4 @@
 
-// Data gathered from http://populationpyramid.net/germany/2015/
 
 
 //Get the data
